@@ -1,12 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
+  <title>Netlify CMS</title>
+  <!-- 引入 Netlify CMS 的 CSS 样式 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/netlify-cms/2.11.7/cms.css">
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- 主体内容 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/netlify-cms/2.11.7/cms.js"></script>
+  <script>
+    // Netlify CMS 的配置
+    window.CMS_MANUAL_INIT = true;
+    window.CMS_CONFIG = {
+      backend: {
+        name: 'github',
+        repo: 'username/repo', // 将 "username/repo" 替换为您的 GitHub 用户名和仓库名称
+      },
+      media_folder: 'static/images',
+      public_folder: '/images',
+      collections: [
+        {
+          name: 'blog',
+          label: 'Blog',
+          folder: 'blog',
+          create: true,
+          slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+          fields: [
+            { name: 'title', label: 'Title', widget: 'string' },
+            { name: 'date', label: 'Date', widget: 'datetime' },
+            { name: 'body', label: 'Body', widget: 'markdown' }
+          ]
+        }
+      ]
+    };
+  </script>
 </body>
 </html>
