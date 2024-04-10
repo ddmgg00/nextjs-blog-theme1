@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: ddmgg00/nextjs-blog-theme1   # 您的 GitHub 仓库的用户名和仓库名称
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
