@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netlify CMS Admin</title>
-  <!-- Include the Netlify CMS script -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-</head>
-<body>
-  <h1>Welcome to Netlify CMS Admin</h1>
-  <!-- Add a button to access Netlify CMS -->
-  <button onclick="openNetlifyCMS()">Open CMS</button>
-
-  <!-- Script to open Netlify CMS -->
-  <script>
-    function openNetlifyCMS() {
-      window.netlifyIdentity.open();
-    }
-  </script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  </body>
 </html>
