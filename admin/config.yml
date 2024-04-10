@@ -1,3 +1,19 @@
+# config.yml
+
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: github
+  repo: ddmgg00/nextjs-blog-theme1   # 将 "username/repo" 替换为您的 GitHub 用户名和仓库名称
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - { name: body, label: Body, widget: markdown }
